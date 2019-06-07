@@ -1,0 +1,12 @@
+/node_modules
+# /app
+/dist
+/.vscode
+# package.json
+# package-lock.json
+# yarn.lock
+# gulpfile.js
+dist.zip
+dist.gzip
+# .gitignore
+.DS_Store

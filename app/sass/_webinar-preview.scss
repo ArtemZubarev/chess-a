@@ -1,0 +1,117 @@
+.webinarPreview {
+  position: relative;
+  padding: 12px;
+  flex: 0 0 25%;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 290px;
+  &__divider {
+    background: #ffa246;
+    width: 100%;
+    height: 2px;
+  }
+  &__date {
+    opacity: 0.6;
+    color: #191e24;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  &__title {
+    color: #191e24;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    cursor: pointer;
+    margin-top: 10px;
+    &:hover {
+      color: #ffa246!important;
+    }
+
+  }
+  &__bottomBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 16px;
+    img {
+      width: 100%;
+    }
+  }
+  &__rank {
+    opacity: 0.6;
+    color: #191e24;
+    font-size: 12px;
+    line-height: 12px;
+  }
+  &__speakerName {
+    color: #191e24;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+      color: #ffa246!important;
+    }
+  }
+  &__info {
+    display: flex;
+    margin-top: 10px;
+  }
+  &__infoItem {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    .infoItem__name {
+      opacity: 0.6;
+      color: #191e24;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    .infoItem__value {
+      color: #191e24;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &:nth-of-type(2), &:nth-of-type(4), &:nth-of-type(5), &:nth-of-type(7) {
+    background: linear-gradient(23deg, #191e24 0%, #65686c 100%);
+    .webinarPreview {
+      &__title {
+        color: #fff;
+      }
+      &__date {
+        opacity: 0.6;
+        color: #ffffff;
+      }
+      &__rank {
+        opacity: 0.6;
+        color: #ffffff;
+      }
+      &__speakerName {
+        color: #ffffff;
+      }
+      &__infoItem {
+        .infoItem__name {
+          opacity: 0.6;
+          color: #ffffff;
+        }
+        .infoItem__value {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}

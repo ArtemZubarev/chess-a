@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Chess Action</title>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800|Yeseva+One&display=swap" rel="stylesheet">
+	<!-- <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css"/> -->
+	<link rel="stylesheet" href="./css/main.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"></script> -->
+	<script type="text/javascript" src="./scripts.js"></script>
+</head>
+<body>
+	<div id="app" class="main-wrapper">
+
+<header class="header">
+  <div class="wrapper">
+    <div class="header__container">
+      <div class="header__line">
+        <div class="header__socials">
+          <a href="#" class="header__social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" class="header__icon"><g><g><path fill="#fff" d="M16.561.5H1.44a.938.938 0 0 0-.939.939v15.123c0 .518.42.938.939.938H9.58v-6.583H7.365V8.35h2.216V6.46c0-2.196 1.34-3.391 3.3-3.391.938 0 1.745.07 1.98.101v2.295h-1.359c-1.065 0-1.271.507-1.271 1.25v1.638h2.54l-.33 2.565h-2.21V17.5h4.332c.517 0 .937-.42.937-.939V1.44A.938.938 0 0 0 16.561.5z"/></g></g></svg>
+          </a>
+          <a href="#" class="header__social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" class="header__icon"><g><g><path fill="#fff" d="M11.833 9A2.837 2.837 0 0 0 9 6.166 2.837 2.837 0 0 0 6.166 9 2.837 2.837 0 0 0 9 11.833 2.837 2.837 0 0 0 11.833 9zm2.724-4.537a1.02 1.02 0 1 1-2.041-.001 1.02 1.02 0 0 1 2.04.001zM13.365 9A4.37 4.37 0 0 1 9 13.366 4.37 4.37 0 0 1 4.636 9 4.37 4.37 0 0 1 9 4.636 4.37 4.37 0 0 1 13.365 9zM9 17.5c2.272 0 2.577-.01 3.505-.05 3.094-.144 4.804-1.853 4.944-4.945.041-.918.05-1.222.05-3.505 0-2.271-.009-2.577-.05-3.504C17.31 2.403 15.601.694 12.506.552 11.598.51 11.296.5 9 .5 6.717.5 6.414.51 5.496.551 2.403.693.694 2.402.552 5.495.51 6.403.5 6.705.5 9c0 2.283.01 2.587.051 3.505.142 3.092 1.851 4.802 4.944 4.944.928.041 1.234.05 3.505.05z"/></g></g></svg>
+          </a>
+          <a href="#" class="header__social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" class="header__icon"><g><g><path fill="#fff" d="M17.5 1.636a6.963 6.963 0 0 1-2.003.549A3.493 3.493 0 0 0 17.03.254c-.673.4-1.42.69-2.215.846A3.482 3.482 0 0 0 12.27 0c-2.252 0-3.907 2.1-3.398 4.282A9.901 9.901 0 0 1 1.684.638a3.492 3.492 0 0 0 1.078 4.657 3.473 3.473 0 0 1-1.578-.437c-.039 1.616 1.12 3.128 2.797 3.464a3.496 3.496 0 0 1-1.576.06 3.49 3.49 0 0 0 3.259 2.421A7.013 7.013 0 0 1 .5 12.248a9.874 9.874 0 0 0 5.346 1.567c6.476 0 10.135-5.469 9.914-10.374a7.1 7.1 0 0 0 1.74-1.805z"/></g></g></svg>
+          </a>
+          <a href="#" class="header__social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14" class="header__icon"><g><g><path fill="#fff" d="M17.5 7.893H20V6.107h-2.5V3.43h-1.667v2.678h-2.5v1.786h2.5v2.679H17.5zm-7.604 3.643c1.006-1.11 1.538-2.629 1.538-4.393 0-.42-.045-.741-.092-1.036H5.833V8.25h3.309c-.136.933-1.003 2.697-3.309 2.697-1.994 0-3.616-1.77-3.616-3.947 0-2.176 1.622-3.946 3.616-3.946 1.15 0 1.899.524 2.325.964l1.584-1.634C8.674 1.315 7.322.75 5.833.75 2.617.75 0 3.554 0 7s2.617 6.25 5.833 6.25c1.641 0 3.046-.593 4.063-1.714z"/></g></g></svg>
+          </a>
+        </div>
+        <div class="header__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="101" height="76" viewBox="0 0 101 76"><g><g><g><g><path fill="#fff" d="M41.956 25.498c0 7.708.003 15.415-.008 23.123-.001.546.19.796.739.763.192-.012.387.006.58-.005.4-.024.541.167.545.557.003.396-.19.494-.538.493-2.82-.009-5.64-.014-8.461-.006-.375.001-.52-.132-.523-.504-.002-.356.114-.52.491-.55 1.347-.11 1.356-.12 1.357-1.453.005-7.457.007-14.913.007-22.37 0-.914-.044-.938-.948-.926-1.449.018-2.897.018-4.346.027-.738.004-.78.043-.78.79v22.66c.004 1.24.004 1.251 1.217 1.273.396.006.608.092.604.548-.004.43-.202.513-.574.511-2.762-.013-5.524-.014-8.287-.019-.096 0-.193 0-.29-.008-.367-.028-.544-.266-.452-.586.052-.178.291-.402.471-.428 1.454-.209 1.455-.196 1.458-1.676l.079-44.797c0-.097.002-.194-.003-.29-.04-.918-.104-.982-1.026-.94-.437.021-.797.028-.811-.588-.013-.526.147-.725.686-.718 2.202.03 4.404.03 6.606.038.56.002 1.12.009 1.68-.008.533-.016.446.377.461.684.016.321-.01.647-.479.598-.019-.003-.039-.002-.058-.002-1.278.016-1.273.016-1.274 1.293-.001 6.53-.005 13.059-.01 19.588 0 .74.054.806.773.81 1.488.006 2.975.006 4.462.01.803.002.841-.025.842-.859.008-6.394.012-12.788.015-19.182 0-.367-.022-.733-.025-1.1-.003-.411-.2-.601-.613-.572-.154.011-.309.001-.463.001-.662-.001-.807-.17-.747-.826.029-.305.163-.437.48-.434 2.84.024 5.68.04 8.52.058.412.003.52.274.518.617-.002.347-.114.567-.54.579-1.328.038-1.34.053-1.34 1.398-.005 7.476-.003 14.952-.003 22.428z"/></g><g><path fill="#fff" d="M89.834 41.7c0 1.719-.008 3.438.004 5.157.006.94.23 1.794 1.065 2.377 1.274.888 3.763.442 3.997-1.534.07-.592.146-1.188.14-1.782-.03-3.167-.032-6.336-.15-9.5-.06-1.602-.668-3.098-1.535-4.438-1.924-2.974-3.904-5.91-5.865-8.86-.682-1.026-1.415-2.021-2.05-3.075-1.017-1.686-1.522-3.54-1.537-5.507-.019-2.606-.084-5.217.04-7.818.112-2.356 1.455-4.093 3.435-5.238 3.305-1.91 6.723-1.92 10 .021 2.15 1.275 3.422 3.222 3.41 5.855-.012 2.434.014 4.868.045 7.302.006.47-.146.666-.626.661-1.545-.016-3.091-.02-4.636-.006-.526.005-.583-.282-.582-.705.006-3.361.02-6.723-.022-10.084-.008-.673-.136-1.394-.408-2.005-.544-1.226-1.69-1.257-2.826-1.158-.927.08-1.612.678-1.865 1.644-.12.462-.204.948-.206 1.424-.015 2.936-.074 5.875.026 8.808.066 1.94.635 3.792 1.721 5.437 1.325 2.007 2.674 4 4.014 5.996 1.255 1.87 2.53 3.726 3.764 5.609 1.163 1.774 1.66 3.768 1.718 5.862.068 2.491.136 4.986.065 7.475-.079 2.763-1.544 4.75-3.918 6.045-2.523 1.375-5.227 1.484-7.91.633-2.253-.714-3.982-2.174-4.879-4.435a5.423 5.423 0 0 1-.378-1.86c-.047-2.588-.028-5.177-.037-7.765-.002-.484.21-.685.708-.678 1.468.022 2.937.007 4.405.011.722.003.771.047.774.799.007 1.777.002 3.555.002 5.332z"/></g><g><path fill="#fff" d="M68.744 41.643c0 1.739-.033 3.478.018 5.215.017.56.163 1.16.415 1.659.42.83 1.654 1.32 2.586 1.16 1.515-.263 2.265-1.046 2.28-2.586.03-3.36.061-6.723-.03-10.082-.06-2.19-.946-4.14-2.179-5.945a564.774 564.774 0 0 1-4.751-7.103c-.987-1.491-1.99-2.975-2.897-4.514-.837-1.418-1.207-3.013-1.245-4.648-.055-2.413.011-4.829-.027-7.243-.044-2.698 1.224-4.675 3.419-6.033 3.081-1.907 6.363-1.965 9.546-.345 2.554 1.3 4.026 3.453 3.991 6.462-.026 2.317-.02 4.635.009 6.953.006.552-.153.752-.715.74-1.468-.03-2.936-.033-4.404-.006-.543.01-.735-.147-.73-.718.022-3.438.007-6.877.004-10.315 0-.868-.122-1.706-.791-2.337-.885-.833-1.975-.758-3-.46-.99.288-1.471 1.157-1.486 2.14-.05 3.36-.131 6.724-.001 10.08.08 2.06.916 3.955 2.108 5.668.9 1.292 1.765 2.61 2.646 3.917 1.354 2.006 2.699 4.018 4.064 6.017 1.412 2.065 2.322 4.286 2.3 6.836-.02 2.415-.047 4.83.01 7.243.063 2.59-1.132 4.475-3.183 5.86-2.412 1.63-5.082 1.843-7.867 1.217-1.99-.448-3.566-1.536-4.754-3.154-.678-.923-1.117-2.006-1.136-3.167-.044-2.665-.012-5.331-.027-7.997-.002-.445.15-.612.608-.605 1.506.024 3.014.035 4.52.004.54-.011.707.182.702.698-.019 1.797-.007 3.593-.007 5.39z"/></g><g><path fill="#fff" d="M7.08 25.549c0 6.993.046 13.986-.03 20.978-.021 1.909 1.856 3.794 4.08 2.9.951-.381 1.53-1.17 1.725-2.17.11-.563.103-1.153.105-1.73.012-3.091.016-6.182.01-9.273 0-.505.167-.724.712-.715 1.487.026 2.975 0 4.462-.001.72 0 .812.065.813.791.006 2.647.05 5.295-.04 7.939-.05 1.473-.792 2.714-1.832 3.758-2.195 2.205-4.896 2.95-7.922 2.727-3.03-.223-5.516-1.462-7.252-4.012-.555-.816-.91-1.739-.911-2.749 0-4.25.002-8.499.022-12.748.038-7.998.094-15.995.132-23.992.013-2.692 1.47-4.464 3.651-5.76C7.416-.06 10.21-.405 13.11.474c2.151.651 3.928 1.913 5.05 3.88.449.789.715 1.777.75 2.687.1 2.546.027 5.099.045 7.648.004.475-.15.66-.626.655-1.487-.016-2.974-.004-4.462-.012-.729-.004-.766-.049-.766-.809.004-3.38.012-6.761.014-10.142.001-1.783-1.167-3.02-2.856-3.033-1.915-.014-3.176 1.175-3.178 3.048-.008 7.051-.003 14.102-.003 21.153z"/></g><g><path fill="#ff4646" d="M49.323 25.316c0-7.145 0-14.29.002-21.435 0-.966.003-1.932.046-2.896.01-.215.16-.565.309-.604.378-.098.76.065.849.49.049.237-.003.55-.128.758-.533.897-.502 1.206.286 1.855.79.652.792.653.227 1.507-.2.302-.193.545.182.682 1.25.458 1.887 1.45 2.33 2.626.241.64.586.708 1.298.373.299-.141.668-.273.972-.221.267.045.488.355.729.547-.172.211-.303.493-.523.62-.945.551-1.84 1.166-2.303 2.186-.522 1.149-.552 2.395-.483 3.634.01.18.19.382.342.514.295.254.204.412-.028.654-.163.169-.34.482-.284.66.062.202.367.343.588.474.107.064.264.039.396.066.516.108.686.46.455.928-.247.498-.131.71.413.763.269.026.567-.009.797.1.21.1.479.358.476.542-.005.219-.226.547-.432.629-.712.282-1.466.453-2.185.72-.19.071-.43.323-.444.507-.135 1.845-.316 3.694-.303 5.54.01 1.301.226 2.614.478 3.896.364 1.856.936 3.658 1.99 5.257.18.272.55.426.845.613.16.1.363.134.524.233.49.304.496.415.07.787-.588.515-.517 1.736.202 2.43.423.409.974.685 1.402 1.09.51.481 1.054.978 1.392 1.577.384.68.457 1.478-.112 2.169-.103.124-.286.182-.392.305-.152.177-.393.407-.365.576.034.204.298.381.488.54.078.067.25.022.327.089.192.167.48.36.494.56.016.222-.2.484-.366.688-.1.123-.29.202-.454.238-.376.083-.517.307-.598.674-.184.828-.522 1.067-1.375 1.068-2.433.005-4.867.01-7.3.009-.805 0-.81-.009-.81-.8V25.315z"/></g></g><g><path fill="#fff" d="M101 75.575h-1.675l-9.31-16.11c.11 1.497.166 3.404.166 5.719v10.391h-1.236V58.111h1.675l9.309 16.11a78.482 78.482 0 0 1-.165-5.105V58.11H101zM72.99 58.903c-1.904 0-3.41.676-4.517 2.03-1.108 1.353-1.661 3.34-1.661 5.961 0 2.57.558 4.528 1.675 5.873 1.116 1.344 2.618 2.017 4.503 2.017 1.96 0 3.483-.669 4.572-2.005 1.09-1.336 1.634-3.306 1.634-5.91 0-2.622-.549-4.605-1.647-5.95-1.099-1.344-2.618-2.016-4.559-2.016zm0-1.047c1.52 0 2.847.345 3.982 1.034 1.135.69 2.018 1.71 2.65 3.064.632 1.353.947 2.991.947 4.915 0 1.89-.31 3.506-.933 4.85-.623 1.345-1.502 2.371-2.637 3.077-1.135.707-2.471 1.06-4.009 1.06-1.501 0-2.82-.349-3.954-1.047-1.135-.698-2.018-1.719-2.65-3.064-.632-1.344-.947-2.961-.947-4.85 0-1.89.315-3.516.947-4.877.632-1.362 1.52-2.396 2.664-3.102 1.144-.707 2.457-1.06 3.94-1.06zm-15.927.255v17.464h-1.29V58.111zm-8.018 0l-.165 1.098h-5.602v16.366h-1.29V59.21h-5.63v-1.098zm-21.694-.255c1.007 0 1.867.128 2.581.383s1.419.647 2.114 1.174l-.713.817c-.66-.476-1.282-.817-1.868-1.02-.586-.205-1.263-.307-2.032-.307-1.849 0-3.35.65-4.503 1.953-1.154 1.302-1.73 3.298-1.73 5.987 0 1.736.27 3.196.81 4.379.54 1.183 1.272 2.068 2.196 2.655.925.587 1.973.881 3.145.881.897 0 1.657-.123 2.279-.37.622-.247 1.263-.617 1.922-1.11l.714.816c-1.391 1.175-3.048 1.762-4.97 1.762-1.446 0-2.733-.349-3.858-1.047-1.126-.698-2.01-1.723-2.65-3.076-.641-1.354-.961-2.983-.961-4.89 0-1.94.33-3.583.988-4.928.66-1.344 1.56-2.357 2.705-3.038 1.144-.68 2.421-1.021 3.83-1.021zM3.433 69.6h7.414l-3.68-10.494zm9.5 5.974l-1.73-4.902H3.049l-1.73 4.902H0l6.343-17.464h1.648l6.343 17.464z"/></g></g></g></svg>
+        </div>
+        <div class="header__right">
+          <div class="header__login-btn">
+            Вход
+          </div>
+          <div class="header__lang">
+            Ru
+          </div>
+        </div>
+      </div>
+      <div class="header__line header__line-nav nav">
+        <a href="#" class="nav__link">Учиться</a>
+        <a href="#" class="nav__link">Вебинары</a>
+        <a href="#" class="nav__link">Играть</a>
+        <a href="#" class="nav__link">Преподаватели</a>
+        <a href="#" class="nav__link">Шахматы в школе</a>
+        <a href="#" class="nav__link">Форум</a>
+        <a href="#" class="nav__link">Тарифы</a>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="banner">
+  <div class="banner__image">
+    <img src="./img/background.jpg" alt>
+  </div>
+  <div class="wrapper">
+    <div class="banner__container">
+      <div class="banner__head">
+        <h1 class="main-title">Комфортная среда для обучения шахматам</h1>
+        <p class="banner__text">
+          Здесь преподаватели и ученики взаимодействуют как равноценные
+          партнеры, встречаются в сети и играют в шахматы
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mainCourse">
+  <div class="wrapper">
+    <div class="mainCourse__container">
+      <div class="coursePreview coursePreview-big">
+        <div class="coursePreview__image">
+          <img src="./img/karyakin.jpg" alt>
+        </div>
+        <div class="coursePreview__head">
+          <div class="coursePreview__avatar">
+            <img src="./img/preview-karyakin.png" alt>
+          </div>
+          <div class="coursePreview__text">
+            <span class="coursePreview__rank">Вице-чемпион мира</span>
+            <span class="coursePreview__speakerName">Сергей Карякин</span>
+          </div>
+        </div>
+        <div class="coursePreview__bottom">
+          <span class="coursePreview__name">5 причин, почему я на ChessAction</span>
+          <div class="coursePreview__rating">
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+          </div>
+          <div class="coursePreview__info">
+            <div class="coursePreview__infoItem infoItem">
+              <span class="infoItem__name">Уровень доступа</span>
+              <span class="infoItem__value">Мастер</span>
+            </div>
+            <div class="coursePreview__infoItem infoItem">
+              <span class="infoItem__name">Сложность</span>
+              <span class="infoItem__value">Для опытных</span>
+            </div>
+            <div class="coursePreview__infoItem infoItem">
+              <span class="infoItem__name">Занятий</span>
+              <span class="infoItem__value">19 лекций</span>
+            </div>
+            <div class="coursePreview__infoItem infoItem">
+              <span class="infoItem__name">Продолжительность</span>
+              <span class="infoItem__value">8 часов 24 минуты</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="homeCourses">
+  <div class="wrapper">
+    <h2 class="title">Курсы</h2>
+    <div class="homeCourses__container">
+      <div class="homeCourses__list">
+<div class="coursePreview">
+<div class="phase debut">
+    <div class="phase__layout"></div>
+    <div class="phase__box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M7.5 6.75h2.25v-1.5H7.98A2.987 2.987 0 0 0 9 3a3 3 0 1 0-5.402 1.798c.125.165.268.315.422.452H2.25v1.5H4.5c0 1.795-.792 3.4-2.04 4.5A5.984 5.984 0 0 1 0 12.554v1.696h12v-1.696a5.976 5.976 0 0 1-2.46-1.304 5.979 5.979 0 0 1-2.04-4.5z"/></g></g></svg>
+      <span class="phase__name">ДЕБЮТ</span>
+    </div>
+  </div>
+    <div class="coursePreview__image">
+      <img src="./img/course_1.jpg" alt>
+    </div>
+    <div class="coursePreview__head">
+      <div class="coursePreview__avatar">
+        <img src="./img/preview-fominih.png" alt>
+      </div>
+      <div class="coursePreview__text">
+        <span class="coursePreview__rank">Международный гроссмейстер</span>
+        <span class="coursePreview__speakerName">Мария Фоминых</span>
+      </div>
+    </div>
+    <div class="coursePreview__bottom">
+      <span class="coursePreview__name">Детский мат</span>
+      <div class="coursePreview__rating rankB">
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+      </div>
+      <div class="coursePreview__info">
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Уровень доступа</span>
+          <span class="infoItem__value">Мастер</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Сложность</span>
+          <span class="infoItem__value">Для опытных</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Занятий</span>
+          <span class="infoItem__value">19 лекций</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Продолжительность</span>
+          <span class="infoItem__value">8 часов 24 минуты</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="coursePreview ">
+<div class="phase mittelspiel">
+    <div class="phase__layout"></div>
+    <div class="phase__box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M9.975 4.275L5.7 0v1.425L1.425 3.563V5.7h2.85l-2.85 5.7H0v2.85h11.4V11.4H9.975z"/></g></g></svg>
+      <span class="phase__name">МИТТЕЛЬШПИЛЬ</span>
+    </div>
+  </div>
+    <div class="coursePreview__image">
+      <img src="./img/course_2.jpg" alt>
+    </div>
+    <div class="coursePreview__head">
+      <div class="coursePreview__avatar">
+        <img src="./img/preview-fominih.png" alt>
+      </div>
+      <div class="coursePreview__text">
+        <span class="coursePreview__rank">Международный гроссмейстер</span>
+        <span class="coursePreview__speakerName">Мария Фоминых</span>
+      </div>
+    </div>
+    <div class="coursePreview__bottom">
+      <span class="coursePreview__name">Дурацкий мат</span>
+      <div class="coursePreview__rating rankA">
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+      </div>
+      <div class="coursePreview__info">
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Уровень доступа</span>
+          <span class="infoItem__value">Мастер</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Сложность</span>
+          <span class="infoItem__value">Для новичков</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Занятий</span>
+          <span class="infoItem__value">6 лекций</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Продолжительность</span>
+          <span class="infoItem__value">3 часа 42 минуты</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="coursePreview">
+<div class="phase endspiel">
+  <div class="phase__layout"></div>
+  <div class="phase__box">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M8.25 7.5h1.5V6h-1.5l1.5-3.75L9 1.5H6.9L7.5 0h-3l.6 1.5H3l-.75.75L3.75 6h-1.5v1.5h1.5c0 1.795-.792 3.4-2.04 4.5A5.973 5.973 0 0 1 0 13.06V15h12v-1.94A5.973 5.973 0 0 1 10.29 12a5.979 5.979 0 0 1-2.04-4.5z"/></g></g></svg>
+    <span class="phase__name">ЭНДШПИЛЬ</span>
+  </div>
+</div>
+    <div class="coursePreview__image">
+      <img src="./img/course_3.jpg" alt>
+    </div>
+    <div class="coursePreview__head">
+      <div class="coursePreview__avatar">
+        <img src="./img/preview-javoronkov.png" alt>
+      </div>
+      <div class="coursePreview__text">
+        <span class="coursePreview__rank">Кандидат в мастера</span>
+        <span class="coursePreview__speakerName">Петр Жаворонков</span>
+      </div>
+    </div>
+    <div class="coursePreview__bottom">
+      <span class="coursePreview__name">Эндшпили Роберта Фишера</span>
+      <div class="coursePreview__rating rankA">
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+      </div>
+      <div class="coursePreview__info">
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Уровень доступа</span>
+          <span class="infoItem__value">Базовый</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Сложность</span>
+          <span class="infoItem__value">Для профи</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Занятий</span>
+          <span class="infoItem__value">2 лекции</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Продолжительность</span>
+          <span class="infoItem__value">2 часа 12 минут</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="coursePreview">
+<div class="phase mittelspiel">
+    <div class="phase__layout"></div>
+    <div class="phase__box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M9.975 4.275L5.7 0v1.425L1.425 3.563V5.7h2.85l-2.85 5.7H0v2.85h11.4V11.4H9.975z"/></g></g></svg>
+      <span class="phase__name">МИТТЕЛЬШПИЛЬ</span>
+    </div>
+  </div>
+    <div class="coursePreview__image">
+      <img src="./img/course_4.jpg" alt>
+    </div>
+    <div class="coursePreview__head">
+      <div class="coursePreview__avatar">
+          <img src="./img/preview-fominih.png" alt>
+      </div>
+      <div class="coursePreview__text">
+        <span class="coursePreview__rank">Международный гроссмейстер</span>
+        <span class="coursePreview__speakerName">Мария Фоминых</span>
+      </div>
+    </div>
+    <div class="coursePreview__bottom">
+      <span class="coursePreview__name">Харакири</span>
+      <div class="coursePreview__rating rankB">
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+      </div>
+      <div class="coursePreview__info">
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Уровень доступа</span>
+          <span class="infoItem__value">Мастер</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Сложность</span>
+          <span class="infoItem__value">Для опытных</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Занятий</span>
+          <span class="infoItem__value">19 лекций</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Продолжительность</span>
+          <span class="infoItem__value">3 часа 12 минут</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="coursePreview">
+<div class="phase mittelspiel">
+    <div class="phase__layout"></div>
+    <div class="phase__box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M9.975 4.275L5.7 0v1.425L1.425 3.563V5.7h2.85l-2.85 5.7H0v2.85h11.4V11.4H9.975z"/></g></g></svg>
+      <span class="phase__name">МИТТЕЛЬШПИЛЬ</span>
+    </div>
+  </div>
+    <div class="coursePreview__image">
+      <img src="./img/course_5.jpg" alt>
+    </div>
+    <div class="coursePreview__head">
+      <div class="coursePreview__avatar">
+        <img src="./img/preview-karyakin.png" alt>
+      </div>
+      <div class="coursePreview__text">
+          <span class="coursePreview__rank">Международный гроссмейстер</span>
+        <span class="coursePreview__speakerName">Николай Шульц</span>
+      </div>
+    </div>
+    <div class="coursePreview__bottom">
+      <span class="coursePreview__name">Прорубая дорогу слонам</span>
+      <div class="coursePreview__rating rankA">
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+      </div>
+      <div class="coursePreview__info">
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Уровень доступа</span>
+          <span class="infoItem__value">Мастер</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Сложность</span>
+          <span class="infoItem__value">Для новичков</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Занятий</span>
+          <span class="infoItem__value">6 лекций</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Продолжительность</span>
+          <span class="infoItem__value">3 часа 42 минуты</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="coursePreview">
+<div class="phase debut">
+    <div class="phase__layout"></div>
+    <div class="phase__box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M7.5 6.75h2.25v-1.5H7.98A2.987 2.987 0 0 0 9 3a3 3 0 1 0-5.402 1.798c.125.165.268.315.422.452H2.25v1.5H4.5c0 1.795-.792 3.4-2.04 4.5A5.984 5.984 0 0 1 0 12.554v1.696h12v-1.696a5.976 5.976 0 0 1-2.46-1.304 5.979 5.979 0 0 1-2.04-4.5z"/></g></g></svg>
+      <span class="phase__name">ДЕБЮТ</span>
+    </div>
+  </div>
+    <div class="coursePreview__image">
+      <img src="./img/course_6.jpg" alt>
+    </div>
+    <div class="coursePreview__head">
+      <div class="coursePreview__avatar">
+        <img src="./img/preview-rapoport.png" alt>
+      </div>
+      <div class="coursePreview__text">
+        <span class="coursePreview__rank">Международный мастер</span>
+        <span class="coursePreview__speakerName">Василий Раппоппорт</span>
+      </div>
+    </div>
+    <div class="coursePreview__bottom">
+      <span class="coursePreview__name">Защита Алехина</span>
+      <div class="coursePreview__rating rankB">
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+      </div>
+      <div class="coursePreview__info">
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Уровень доступа</span>
+          <span class="infoItem__value">Мастер</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Сложность</span>
+          <span class="infoItem__value">Для опытных</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Занятий</span>
+          <span class="infoItem__value">19 лекций</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Продолжительность</span>
+          <span class="infoItem__value">8 часов 24 минуты</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="coursePreview">
+<div class="phase endspiel">
+  <div class="phase__layout"></div>
+  <div class="phase__box">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M8.25 7.5h1.5V6h-1.5l1.5-3.75L9 1.5H6.9L7.5 0h-3l.6 1.5H3l-.75.75L3.75 6h-1.5v1.5h1.5c0 1.795-.792 3.4-2.04 4.5A5.973 5.973 0 0 1 0 13.06V15h12v-1.94A5.973 5.973 0 0 1 10.29 12a5.979 5.979 0 0 1-2.04-4.5z"/></g></g></svg>
+    <span class="phase__name">ЭНДШПИЛЬ</span>
+  </div>
+</div>
+    <div class="coursePreview__image">
+      <img src="./img/course_7.jpg" alt>
+    </div>
+    <div class="coursePreview__head">
+      <div class="coursePreview__avatar">
+        <img src="./img/preview-javoronkov.png" alt>
+      </div>
+      <div class="coursePreview__text">
+        <span class="coursePreview__rank">Кандидат в мастера</span>
+        <span class="coursePreview__speakerName">Петр Жаворонков</span>
+      </div>
+    </div>
+    <div class="coursePreview__bottom">
+      <span class="coursePreview__name">Три «кита» эндшпиля</span>
+      <div class="coursePreview__rating rankA">
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+      </div>
+      <div class="coursePreview__info">
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Уровень доступа</span>
+          <span class="infoItem__value">Базовый</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Сложность</span>
+          <span class="infoItem__value">Для профи</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Занятий</span>
+          <span class="infoItem__value">2 лекции</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Продолжительность</span>
+          <span class="infoItem__value">2 часа 12 минут</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="coursePreview">
+<div class="phase mittelspiel">
+    <div class="phase__layout"></div>
+    <div class="phase__box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M9.975 4.275L5.7 0v1.425L1.425 3.563V5.7h2.85l-2.85 5.7H0v2.85h11.4V11.4H9.975z"/></g></g></svg>
+      <span class="phase__name">МИТТЕЛЬШПИЛЬ</span>
+    </div>
+  </div>
+    <div class="coursePreview__image">
+      <img src="./img/course_8.jpg" alt>
+    </div>
+    <div class="coursePreview__head">
+      <div class="coursePreview__avatar">
+        <img src="./img/preview-karyakin.png" alt>
+      </div>
+      <div class="coursePreview__text">
+          <span class="coursePreview__rank">Международный гроссмейстер</span>
+        <span class="coursePreview__speakerName">Николай Шульц</span>
+      </div>
+    </div>
+    <div class="coursePreview__bottom">
+      <span class="coursePreview__name">Оригинальный стиль Тиграна Петросяна</span>
+      <div class="coursePreview__rating rankA">
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+      </div>
+      <div class="coursePreview__info">
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Уровень доступа</span>
+          <span class="infoItem__value">Мастер</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Сложность</span>
+          <span class="infoItem__value">Для опытных</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Занятий</span>
+          <span class="infoItem__value">19 лекций</span>
+        </div>
+        <div class="coursePreview__infoItem infoItem">
+          <span class="infoItem__name">Продолжительность</span>
+          <span class="infoItem__value">8 часов 24 минуты</span>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+      <div class="sectionTotal sectionTotal-cources">
+        <div class="sectionTotal__left">
+          41 курс, 159 лекций, 782 часов
+        </div>
+        <div class="sectionTotal__right">
+          <button class="more">ВСЕ КУРСЫ →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="checkYourself">
+  <div class="wrapper">
+    <div class="checkYourself__container">
+      <div class="checkYourself__board">
+        <img src="./img/chess.png" alt>
+      </div>
+      <div class="checkYourself__controlPanel">
+        <div class="checkYourself__box">
+          <h2 class="title">Проверьте себя</h2>
+          <p class="text">Поставьте мат в 12 ходов. Играйте белыми.</p>
+          <div class="checkYourself__history">
+            <div>
+              <img src="./img/history.png" alt>
+            </div>
+            <a class="help">Подсказать</a>
+          </div>
+          <div>
+            <button class="checkYourself__restart">Сначала</button>
+            <button class="checkYourself__next">Следующая задача</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="homeWebinars">
+    <div class="wrapper">
+      <h2 class="title">Вебинары</h2>
+      <div class="homeWebinars__container">
+        <div class="homeWebinars__list">
+<div class="webinarPreview">
+<div class="phase debut">
+    <div class="phase__layout"></div>
+    <div class="phase__box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M7.5 6.75h2.25v-1.5H7.98A2.987 2.987 0 0 0 9 3a3 3 0 1 0-5.402 1.798c.125.165.268.315.422.452H2.25v1.5H4.5c0 1.795-.792 3.4-2.04 4.5A5.984 5.984 0 0 1 0 12.554v1.696h12v-1.696a5.976 5.976 0 0 1-2.46-1.304 5.979 5.979 0 0 1-2.04-4.5z"/></g></g></svg>
+      <span class="phase__name">ДЕБЮТ</span>
+    </div>
+  </div>
+  <div class="webinarPreview__head">
+    <div class="webinarPreview__date">Сегодня, 18:00</div>
+    <div class="webinarPreview__title">Сицилианская <br> защита и как ее играть</div>
+  </div>
+  <div class="webinarPreview__bottom">
+    <div class="webinarPreview__bottomBox">
+      <div class="webinarPreview__avatar">
+        <img src="./img/preview-rapoport.png" alt>
+      </div>
+      <div class="webinarPreview__text">
+        <span class="webinarPreview__rank">Международный мастер</span>
+        <span class="webinarPreview__speakerName">Василий Раппоппорт</span>
+      </div>
+    </div>
+    <div class="webinarPreview__divider"></div>
+    <div class="webinarPreview__info ">
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Уровень доступа</span>
+        <span class="infoItem__value">Мастер</span>
+      </div>
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Сложность</span>
+        <span class="infoItem__value">Для опытных</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="webinarPreview">
+<div class="phase mittelspiel">
+    <div class="phase__layout"></div>
+    <div class="phase__box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M9.975 4.275L5.7 0v1.425L1.425 3.563V5.7h2.85l-2.85 5.7H0v2.85h11.4V11.4H9.975z"/></g></g></svg>
+      <span class="phase__name">МИТТЕЛЬШПИЛЬ</span>
+    </div>
+  </div>
+  <div class="webinarPreview__head">
+    <div class="webinarPreview__date">Завтра, 18:00</div>
+    <div class="webinarPreview__title">Единоборство <br> с ладьёй</div>
+  </div>
+  <div class="webinarPreview__bottom">
+    <div class="webinarPreview__bottomBox">
+      <div class="webinarPreview__avatar">
+        <img src="./img/preview-rapoport.png" alt>
+      </div>
+      <div class="webinarPreview__text">
+        <span class="webinarPreview__rank">Международный мастер</span>
+        <span class="webinarPreview__speakerName">Петр Жаворонков</span>
+      </div>
+    </div>
+    <div class="webinarPreview__divider"></div>
+    <div class="webinarPreview__info ">
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Уровень доступа</span>
+        <span class="infoItem__value">Мастер</span>
+      </div>
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Сложность</span>
+        <span class="infoItem__value">Для опытных</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="webinarPreview">
+<div class="phase endspiel">
+  <div class="phase__layout"></div>
+  <div class="phase__box">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M8.25 7.5h1.5V6h-1.5l1.5-3.75L9 1.5H6.9L7.5 0h-3l.6 1.5H3l-.75.75L3.75 6h-1.5v1.5h1.5c0 1.795-.792 3.4-2.04 4.5A5.973 5.973 0 0 1 0 13.06V15h12v-1.94A5.973 5.973 0 0 1 10.29 12a5.979 5.979 0 0 1-2.04-4.5z"/></g></g></svg>
+    <span class="phase__name">ЭНДШПИЛЬ</span>
+  </div>
+</div>
+  <div class="webinarPreview__head">
+    <div class="webinarPreview__date">14 июля, 14:00</div>
+    <div class="webinarPreview__title">Оригинальный стиль <br> Тиграна Петросяна</div>
+  </div>
+  <div class="webinarPreview__bottom">
+    <div class="webinarPreview__bottomBox">
+      <div class="webinarPreview__avatar">
+        <img src="./img/preview-rapoport.png" alt>
+      </div>
+      <div class="webinarPreview__text">
+        <span class="webinarPreview__rank">Кандидат в мастера</span>
+        <span class="webinarPreview__speakerName">Николай Шульц</span>
+      </div>
+    </div>
+    <div class="webinarPreview__divider"></div>
+    <div class="webinarPreview__info ">
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Уровень доступа</span>
+        <span class="infoItem__value">Мастер</span>
+      </div>
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Сложность</span>
+        <span class="infoItem__value">Для новичков</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="webinarPreview">
+<div class="phase debut">
+    <div class="phase__layout"></div>
+    <div class="phase__box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M7.5 6.75h2.25v-1.5H7.98A2.987 2.987 0 0 0 9 3a3 3 0 1 0-5.402 1.798c.125.165.268.315.422.452H2.25v1.5H4.5c0 1.795-.792 3.4-2.04 4.5A5.984 5.984 0 0 1 0 12.554v1.696h12v-1.696a5.976 5.976 0 0 1-2.46-1.304 5.979 5.979 0 0 1-2.04-4.5z"/></g></g></svg>
+      <span class="phase__name">ДЕБЮТ</span>
+    </div>
+  </div>
+  <div class="webinarPreview__head">
+    <div class="webinarPreview__date">14 июля, 18:00</div>
+    <div class="webinarPreview__title">Эндшпили Роберта <br> Фишера</div>
+  </div>
+  <div class="webinarPreview__bottom">
+    <div class="webinarPreview__bottomBox">
+      <div class="webinarPreview__avatar">
+        <img src="./img/preview-rapoport.png" alt>
+      </div>
+      <div class="webinarPreview__text">
+        <span class="webinarPreview__rank">Международный мастер</span>
+        <span class="webinarPreview__speakerName">Петр Жаворонков</span>
+      </div>
+    </div>
+    <div class="webinarPreview__divider"></div>
+    <div class="webinarPreview__info ">
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Уровень доступа</span>
+        <span class="infoItem__value">Мастер</span>
+      </div>
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Сложность</span>
+        <span class="infoItem__value">Для опытных</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="webinarPreview">
+<div class="phase endspiel">
+  <div class="phase__layout"></div>
+  <div class="phase__box">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M8.25 7.5h1.5V6h-1.5l1.5-3.75L9 1.5H6.9L7.5 0h-3l.6 1.5H3l-.75.75L3.75 6h-1.5v1.5h1.5c0 1.795-.792 3.4-2.04 4.5A5.973 5.973 0 0 1 0 13.06V15h12v-1.94A5.973 5.973 0 0 1 10.29 12a5.979 5.979 0 0 1-2.04-4.5z"/></g></g></svg>
+    <span class="phase__name">ЭНДШПИЛЬ</span>
+  </div>
+</div>
+  <div class="webinarPreview__head">
+    <div class="webinarPreview__date">15 июля, 14:00</div>
+    <div class="webinarPreview__title">Охотник становится <br> жертвой</div>
+  </div>
+  <div class="webinarPreview__bottom">
+    <div class="webinarPreview__bottomBox">
+      <div class="webinarPreview__avatar">
+        <img src="./img/preview-rapoport.png" alt>
+      </div>
+      <div class="webinarPreview__text">
+        <span class="webinarPreview__rank">Кандидат в мастера</span>
+        <span class="webinarPreview__speakerName">Николай Шульц</span>
+      </div>
+    </div>
+    <div class="webinarPreview__divider"></div>
+    <div class="webinarPreview__info ">
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Уровень доступа</span>
+        <span class="infoItem__value">Базовый</span>
+      </div>
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Сложность</span>
+        <span class="infoItem__value">Для опытных</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="webinarPreview">
+<div class="phase debut">
+    <div class="phase__layout"></div>
+    <div class="phase__box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M7.5 6.75h2.25v-1.5H7.98A2.987 2.987 0 0 0 9 3a3 3 0 1 0-5.402 1.798c.125.165.268.315.422.452H2.25v1.5H4.5c0 1.795-.792 3.4-2.04 4.5A5.984 5.984 0 0 1 0 12.554v1.696h12v-1.696a5.976 5.976 0 0 1-2.46-1.304 5.979 5.979 0 0 1-2.04-4.5z"/></g></g></svg>
+      <span class="phase__name">ДЕБЮТ</span>
+    </div>
+  </div>
+  <div class="webinarPreview__head">
+    <div class="webinarPreview__date">24 июля, 14:00</div>
+    <div class="webinarPreview__title">Три «кита» эндшпиля</div>
+  </div>
+  <div class="webinarPreview__bottom">
+    <div class="webinarPreview__bottomBox">
+      <div class="webinarPreview__avatar">
+        <img src="./img/preview-rapoport.png" alt>
+      </div>
+      <div class="webinarPreview__text">
+        <span class="webinarPreview__rank">Кандидат в мастера</span>
+        <span class="webinarPreview__speakerName">Василий Раппоппорт</span>
+      </div>
+    </div>
+    <div class="webinarPreview__divider"></div>
+    <div class="webinarPreview__info ">
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Уровень доступа</span>
+        <span class="infoItem__value">Мастер</span>
+      </div>
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Сложность</span>
+        <span class="infoItem__value">Для новичков</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="webinarPreview">
+<div class="phase debut">
+    <div class="phase__layout"></div>
+    <div class="phase__box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M7.5 6.75h2.25v-1.5H7.98A2.987 2.987 0 0 0 9 3a3 3 0 1 0-5.402 1.798c.125.165.268.315.422.452H2.25v1.5H4.5c0 1.795-.792 3.4-2.04 4.5A5.984 5.984 0 0 1 0 12.554v1.696h12v-1.696a5.976 5.976 0 0 1-2.46-1.304 5.979 5.979 0 0 1-2.04-4.5z"/></g></g></svg>
+      <span class="phase__name">ДЕБЮТ</span>
+    </div>
+  </div>
+  <div class="webinarPreview__head">
+    <div class="webinarPreview__date">26 июля, 18:00</div>
+    <div class="webinarPreview__title">Самая слабая <br> против самого <br> сильного</div>
+  </div>
+  <div class="webinarPreview__bottom">
+    <div class="webinarPreview__bottomBox">
+      <div class="webinarPreview__avatar">
+        <img src="./img/preview-rapoport.png" alt>
+      </div>
+      <div class="webinarPreview__text">
+        <span class="webinarPreview__rank">Международный мастер</span>
+        <span class="webinarPreview__speakerName">Николай Шульц</span>
+      </div>
+    </div>
+    <div class="webinarPreview__divider"></div>
+    <div class="webinarPreview__info ">
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Уровень доступа</span>
+        <span class="infoItem__value">Мастер</span>
+      </div>
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Сложность</span>
+        <span class="infoItem__value">Для опытных</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="webinarPreview">
+<div class="phase debut">
+    <div class="phase__layout"></div>
+    <div class="phase__box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" class="phase__icon"><g><g opacity=".6"><path fill="#191e24" d="M7.5 6.75h2.25v-1.5H7.98A2.987 2.987 0 0 0 9 3a3 3 0 1 0-5.402 1.798c.125.165.268.315.422.452H2.25v1.5H4.5c0 1.795-.792 3.4-2.04 4.5A5.984 5.984 0 0 1 0 12.554v1.696h12v-1.696a5.976 5.976 0 0 1-2.46-1.304 5.979 5.979 0 0 1-2.04-4.5z"/></g></g></svg>
+      <span class="phase__name">ДЕБЮТ</span>
+    </div>
+  </div>
+  <div class="webinarPreview__head">
+    <div class="webinarPreview__date">30 июля, 14:00</div>
+    <div class="webinarPreview__title">Защита Каро‑Канн</div>
+  </div>
+  <div class="webinarPreview__bottom">
+    <div class="webinarPreview__bottomBox">
+      <div class="webinarPreview__avatar">
+        <img src="./img/preview-rapoport.png" alt>
+      </div>
+      <div class="webinarPreview__text">
+        <span class="webinarPreview__rank">Международный мастер</span>
+        <span class="webinarPreview__speakerName">Петр Жаворонков</span>
+      </div>
+    </div>
+    <div class="webinarPreview__divider"></div>
+    <div class="webinarPreview__info ">
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Уровень доступа</span>
+        <span class="infoItem__value">Мастер</span>
+      </div>
+      <div class="webinarPreview__infoItem infoItem">
+        <span class="infoItem__name">Сложность</span>
+        <span class="infoItem__value">Для новичков</span>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+        <div class="sectionTotal sectionTotal-cources">
+          <div class="sectionTotal__left">
+            37 вебинаров скоро 
+          </div>
+          <div class="sectionTotal__right">
+            <button class="more">ВСЕ ВЕбинары →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="homeLessons">
+  <div class="wrapper">
+    <h2 class="title">Уроки</h2>
+    <div class="homeLessons__container">
+      <div class="homeLessons__list">
+<div class="lessonPreview">
+    <div class="lessonPreview__back">
+      <img src="./img/lesson_1.png" alt>
+    </div>
+    <div class="lessonPreview__box">
+      <div class="lessonPreview__head">
+        <div class="lessonPreview__title" v-on:click="openLesson1(0)">Миттельшпиль. Часть 1</div>
+      </div>
+      <div class="lessonPreview__bottom">
+        <div class="lessonPreview__bottomBox">
+          <div class="lessonPreview__avatar">
+            <img src="./img/preview-rapoport.png" alt>
+          </div>
+          <div class="lessonPreview__text">
+            <span class="lessonPreview__rank">Международный мастер</span>
+            <span class="lessonPreview__speakerName">Василий Раппоппорт</span>
+          </div>
+        </div>
+        <div class="lessonPreview__divider"></div>
+        <div class="lessonPreview__info ">
+          <div class="lessonPreview__infoItem infoItem">
+            <span class="infoItem__name">Уровень доступа</span>
+            <span class="infoItem__value">Базовый</span>
+          </div>
+          <div class="lessonPreview__infoItem infoItem">
+            <span class="infoItem__name">Сложность</span>
+            <span class="infoItem__value">Для опытных</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="lessonPreview">
+    <div class="lessonPreview__back">
+      <img src="./img/lesson_2.png" alt>
+    </div>
+    <div class="lessonPreview__box">
+      <div class="lessonPreview__head">
+        <div class="lessonPreview__title" v-on:click="openLesson1(1)">Основы дебюта. Часть 6</div>
+      </div>
+      <div class="lessonPreview__bottom">
+        <div class="lessonPreview__bottomBox">
+          <div class="lessonPreview__avatar">
+            <img src="./img/preview-pomislova.png" alt>
+          </div>
+          <div class="lessonPreview__text">
+            <span class="lessonPreview__rank">Международный мастер</span>
+            <span class="lessonPreview__speakerName">Елена Помыслова</span>
+          </div>
+        </div>
+        <div class="lessonPreview__divider"></div>
+        <div class="lessonPreview__info ">
+          <div class="lessonPreview__infoItem infoItem">
+            <span class="infoItem__name">Уровень доступа</span>
+            <span class="infoItem__value">Базовый</span>
+          </div>
+          <div class="lessonPreview__infoItem infoItem">
+            <span class="infoItem__name">Сложность</span>
+            <span class="infoItem__value">Для опытных</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="lessonPreview">
+    <div class="lessonPreview__back">
+      <img src="./img/lesson_3.png" alt>
+    </div>
+    <div class="lessonPreview__box">
+      <div class="lessonPreview__head">
+        <div class="lessonPreview__title" v-on:click="openLesson1(2)">Основы эндшпиля. Часть 1</div>
+      </div>
+      <div class="lessonPreview__bottom">
+        <div class="lessonPreview__bottomBox">
+          <div class="lessonPreview__avatar">
+            <img src="./img/preview-v_shultz.png" alt>
+          </div>
+          <div class="lessonPreview__text">
+            <span class="lessonPreview__rank">Международный мастер</span>
+            <span class="lessonPreview__speakerName">Валентина Шульц</span>
+          </div>
+        </div>
+        <div class="lessonPreview__divider"></div>
+        <div class="lessonPreview__info ">
+          <div class="lessonPreview__infoItem infoItem">
+            <span class="infoItem__name">Уровень доступа</span>
+            <span class="infoItem__value">Базовый</span>
+          </div>
+          <div class="lessonPreview__infoItem infoItem">
+            <span class="infoItem__name">Сложность</span>
+            <span class="infoItem__value">Для опытных</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="lessonPreview">
+    <div class="lessonPreview__back">
+      <img src="./img/lesson_4.png" alt>
+    </div>
+    <div class="lessonPreview__box">
+      <div class="lessonPreview__head">
+        <div class="lessonPreview__title" v-on:click="openLesson1(3)">Основы дебюта. Часть 5</div>
+      </div>
+      <div class="lessonPreview__bottom">
+        <div class="lessonPreview__bottomBox">
+          <div class="lessonPreview__avatar">
+            <img src="./img/preview-javoronkov.png" alt>
+          </div>
+          <div class="lessonPreview__text">
+            <span class="lessonPreview__rank">Международный мастер</span>
+            <span class="lessonPreview__speakerName">Петр Жаворонков</span>
+          </div>
+        </div>
+        <div class="lessonPreview__divider"></div>
+        <div class="lessonPreview__info ">
+          <div class="lessonPreview__infoItem infoItem">
+            <span class="infoItem__name">Уровень доступа</span>
+            <span class="infoItem__value">Базовый</span>
+          </div>
+          <div class="lessonPreview__infoItem infoItem">
+            <span class="infoItem__name">Сложность</span>
+            <span class="infoItem__value">Для опытных</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="lessonPreview">
+    <div class="lessonPreview__back">
+      <img src="./img/lesson_5.png" alt>
+    </div>
+    <div class="lessonPreview__box">
+      <div class="lessonPreview__head">
+        <div class="lessonPreview__title" v-on:click="openLesson1(4)">Миттельшпиль. Часть 2</div>
+      </div>
+      <div class="lessonPreview__bottom">
+        <div class="lessonPreview__bottomBox">
+          <div class="lessonPreview__avatar">
+            <img src="./img/preview-v_shultz.png" alt>
+          </div>
+          <div class="lessonPreview__text">
+            <span class="lessonPreview__rank">Международный мастер</span>
+            <span class="lessonPreview__speakerName">Валентина Шульц</span>
+          </div>
+        </div>
+        <div class="lessonPreview__divider"></div>
+        <div class="lessonPreview__info ">
+          <div class="lessonPreview__infoItem infoItem">
+            <span class="infoItem__name">Уровень доступа</span>
+            <span class="infoItem__value">Базовый</span>
+          </div>
+          <div class="lessonPreview__infoItem infoItem">
+            <span class="infoItem__name">Сложность</span>
+            <span class="infoItem__value">Для опытных</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="lessonPreview">
+    <div class="lessonPreview__back">
+      <img src="./img/lesson_6.png" alt>
+    </div>
+    <div class="lessonPreview__box">
+      <div class="lessonPreview__head">
+        <div class="lessonPreview__title" v-on:click="openLesson1(5)">Миттельшпиль. Часть 3</div>
+      </div>
+      <div class="lessonPreview__bottom">
+        <div class="lessonPreview__bottomBox">
+          <div class="lessonPreview__avatar">
+            <img src="./img/preview-javoronkov.png" alt>
+          </div>
+          <div class="lessonPreview__text">
+            <span class="lessonPreview__rank">Международный мастер</span>
+            <span class="lessonPreview__speakerName">Петр Жаворонков</span>
+          </div>
+        </div>
+        <div class="lessonPreview__divider"></div>
+        <div class="lessonPreview__info ">
+          <div class="lessonPreview__infoItem infoItem">
+            <span class="infoItem__name">Уровень доступа</span>
+            <span class="infoItem__value">Базовый</span>
+          </div>
+          <div class="lessonPreview__infoItem infoItem">
+            <span class="infoItem__name">Сложность</span>
+            <span class="infoItem__value">Для опытных</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+      <div class="sectionTotal sectionTotal-cources">
+        <div class="sectionTotal__left">
+          24 урока
+        </div>
+        <div class="sectionTotal__right">
+          <button class="more">ВСЕ УРОКИ →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="videoModal" v-if="modalIsOpen">
+    <div class="videoModal__overlay" v-on:click="closeModal"></div>
+    <div class="videoModal__cancel" v-on:click="closeModal">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="videoModal__content">
+      <video class="videoModal__video" v-bind:src="activeLink" controls="true">
+        <!-- <track kind="subtitles" src="foo.en.vtt" srclang="en" label="English">
+        <track kind="subtitles" src="foo.sv.vtt" srclang="sv" label="Svenska"> -->
+      </video>
+    </div>
+  </div>
+</div>
+
+<div class="homeTariffs">
+    <div class="wrapper">
+      <h2 class="title">Тарифы</h2>
+      <div class="homeTariffs__container">
+        <div class="homeTariffs__list">
+<div class="homeTariff base">
+  <div class="homeTariff__head">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="38" viewBox="0 0 32 38"><g><g><path fill="#191e24" d="M20 18h6v-4h-4.72a8.11 8.11 0 0 0 1.124-1.204 8 8 0 1 0-12.808 0c.332.44.712.84 1.124 1.204H6v4h6c0 4.786-2.112 9.068-5.442 12A15.958 15.958 0 0 1 0 33.476V38h32v-4.524A15.935 15.935 0 0 1 25.442 30C22.112 27.068 20 22.786 20 18z"/></g></g></svg>
+  </div>
+  <div class="homeTariff__box">
+    <div class="homeTariff__info">
+      <h4 class="homeTariff__name">Базовый</h4>
+      <div class="homeTariff__scope">
+        <div class="homeTariff__include">Игра онлайн</div>
+        <div class="homeTariff__include">Просмотр вебинаров</div>
+        <div class="homeTariff__include">Обучение по лучшим методиками</div>
+      </div>
+    </div>
+    <div class="homeTariff__bottom">
+      <div class="homeTariff__price">Бесплатно</div>
+      <div class="homeTariff__buttonBox">
+        <button class="homeTariff__button">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="homeTariff master">
+  <div class="homeTariff__head">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 40"><g><g><path fill="#ffa246" d="M28 12L16 0v4L4 10v6h8L4 32H0v8h32v-8h-4z"/></g></g></svg>
+  </div>
+  <div class="homeTariff__box">
+    <div class="homeTariff__info">
+      <h4 class="homeTariff__name">Мастер</h4>
+      <div class="homeTariff__scope">
+        <div class="homeTariff__include">Игра онлайн</div>
+        <div class="homeTariff__include">Просмотр вебинаров</div>
+        <div class="homeTariff__include">Обучение по лучшим методиками</div>
+        <div class="homeTariff__include">Индивидуальные уроки с лучшими преподавателями</div>
+      </div>
+    </div>
+    <div class="homeTariff__bottom">
+      <div class="homeTariff__price">1500 ₽</div>
+      <div class="homeTariff__buttonBox">
+        <button class="homeTariff__button">Купить</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="homeTariff gross">
+  <div class="homeTariff__head">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 40"><g><g><path fill="#fff" d="M22 20h4v-4h-4l4-10-2-2h-5.6L20 0h-8l1.6 4H8L6 6l4 10H6v4h4c0 4.786-2.112 9.068-5.442 12A15.928 15.928 0 0 1 0 34.826V40h32v-5.174A15.928 15.928 0 0 1 27.442 32C24.112 29.068 22 24.786 22 20z"/></g></g></svg>
+  </div>
+  <div class="homeTariff__box">
+    <div class="homeTariff__info">
+      <h4 class="homeTariff__name">Гроссмейстер</h4>
+      <div class="homeTariff__scope">
+        <div class="homeTariff__include">Игра онлайн</div>
+        <div class="homeTariff__include">Просмотр вебинаров</div>
+        <div class="homeTariff__include">Обучение по лучшим методиками</div>
+        <div class="homeTariff__include">Индивидуальные уроки с лучшими преподавателями</div>
+        <div class="homeTariff__include">Подключение друзей с 50% скидкой</div>
+        <div class="homeTariff__include">Скидки и другие бонусы на все программы</div>
+      </div>
+    </div>
+    <div class="homeTariff__bottom">
+      <div class="homeTariff__price">5000 ₽</div>
+      <div class="homeTariff__buttonBox">
+        <button class="homeTariff__button">Купить</button>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="subscribe">
+  <div class="wrapper">
+    <div class="subscribe__container">
+      <h5 class="subscribe__title">
+        Когда выйдут новые курсы и вебинары
+      </h5>
+      <p class="subscribe__text">
+        Оставьте электронную почту, чтобы узнать о выходе новых курсов и вебинарам. Без спама.
+      </p>
+      <div class="subscribe__inputContainer">
+        <input class="subscribe__input" type="text" placeholder="Электронная почта">
+        <button class="subscribe__button">ПОДПИСАТЬСЯ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrapper">
+    <div class="footer__container">
+      <div class="footer__left">
+        <div class="footer__navItem">
+          <a href="#">КУРСЫ</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="#">ШАХМАТЫ В ШКОЛАХ</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="#">МАНИФЕСТ</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="#">ВЕБИНАРЫ</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="#">ИГРАТЬ</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="#">ТРЕНЕРЫ</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="#">ДЛЯ САМЫХ МАЛЕНЬКИХ</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="#">ТАРИФЫ</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="#">СОЗДАТЕЛИ</a>
+        </div>
+      </div>
+      <div class="footer__right">
+        <div class="footer__docs">
+          <div class="footer__docsItem">
+            <a href>Контакты</a>
+          </div>
+          <div class="footer__docsItem">
+            <a href>Политика конфиденциальности</a>
+          </div>
+          <div class="footer__docsItem">
+            <a href>Соглашение об использовании</a>
+          </div>
+        </div>
+        <div class="footer__socials">
+          <div class="header__socials">
+            <a href="#" class="header__social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" class="header__icon"><g><g><path fill="#fff" d="M16.561.5H1.44a.938.938 0 0 0-.939.939v15.123c0 .518.42.938.939.938H9.58v-6.583H7.365V8.35h2.216V6.46c0-2.196 1.34-3.391 3.3-3.391.938 0 1.745.07 1.98.101v2.295h-1.359c-1.065 0-1.271.507-1.271 1.25v1.638h2.54l-.33 2.565h-2.21V17.5h4.332c.517 0 .937-.42.937-.939V1.44A.938.938 0 0 0 16.561.5z"/></g></g></svg>
+            </a>
+            <a href="#" class="header__social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" class="header__icon"><g><g><path fill="#fff" d="M11.833 9A2.837 2.837 0 0 0 9 6.166 2.837 2.837 0 0 0 6.166 9 2.837 2.837 0 0 0 9 11.833 2.837 2.837 0 0 0 11.833 9zm2.724-4.537a1.02 1.02 0 1 1-2.041-.001 1.02 1.02 0 0 1 2.04.001zM13.365 9A4.37 4.37 0 0 1 9 13.366 4.37 4.37 0 0 1 4.636 9 4.37 4.37 0 0 1 9 4.636 4.37 4.37 0 0 1 13.365 9zM9 17.5c2.272 0 2.577-.01 3.505-.05 3.094-.144 4.804-1.853 4.944-4.945.041-.918.05-1.222.05-3.505 0-2.271-.009-2.577-.05-3.504C17.31 2.403 15.601.694 12.506.552 11.598.51 11.296.5 9 .5 6.717.5 6.414.51 5.496.551 2.403.693.694 2.402.552 5.495.51 6.403.5 6.705.5 9c0 2.283.01 2.587.051 3.505.142 3.092 1.851 4.802 4.944 4.944.928.041 1.234.05 3.505.05z"/></g></g></svg>
+            </a>
+            <a href="#" class="header__social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" class="header__icon"><g><g><path fill="#fff" d="M17.5 1.636a6.963 6.963 0 0 1-2.003.549A3.493 3.493 0 0 0 17.03.254c-.673.4-1.42.69-2.215.846A3.482 3.482 0 0 0 12.27 0c-2.252 0-3.907 2.1-3.398 4.282A9.901 9.901 0 0 1 1.684.638a3.492 3.492 0 0 0 1.078 4.657 3.473 3.473 0 0 1-1.578-.437c-.039 1.616 1.12 3.128 2.797 3.464a3.496 3.496 0 0 1-1.576.06 3.49 3.49 0 0 0 3.259 2.421A7.013 7.013 0 0 1 .5 12.248a9.874 9.874 0 0 0 5.346 1.567c6.476 0 10.135-5.469 9.914-10.374a7.1 7.1 0 0 0 1.74-1.805z"/></g></g></svg>
+            </a>
+            <a href="#" class="header__social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14" class="header__icon"><g><g><path fill="#fff" d="M17.5 7.893H20V6.107h-2.5V3.43h-1.667v2.678h-2.5v1.786h2.5v2.679H17.5zm-7.604 3.643c1.006-1.11 1.538-2.629 1.538-4.393 0-.42-.045-.741-.092-1.036H5.833V8.25h3.309c-.136.933-1.003 2.697-3.309 2.697-1.994 0-3.616-1.77-3.616-3.947 0-2.176 1.622-3.946 3.616-3.946 1.15 0 1.899.524 2.325.964l1.584-1.634C8.674 1.315 7.322.75 5.833.75 2.617.75 0 3.554 0 7s2.617 6.25 5.833 6.25c1.641 0 3.046-.593 4.063-1.714z"/></g></g></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__copy">© 2019 ChessAction</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+</body>
+<script type="application/javascript">
+    const links = [
+        './video/Миттельшпиль. Часть1.mp4',
+        './video/Основы дебюта.Часть6.mp4',
+        './video/Основы зндшпиля-1.mp4',
+        './video/Основы дебюта. Часть5.mp4',
+        './video/Миттельшпиль. Часть2.mp4',
+        './video/Миттельшпиль.Часть3.mp4'
+    ]
+    const app = new Vue({
+      el:'#app',
+      data: {
+        modalIsOpen: false,
+        activeLink: ''
+      },
+      methods: {
+        openLesson1: function(lesson) {
+          this.modalIsOpen = true;
+          this.activeLink = links[lesson];
+        },
+        closeModal: function() {
+          this.modalIsOpen = false;
+          this.activeLink = '';
+        }
+      }
+    });
+    </script>
+</html>

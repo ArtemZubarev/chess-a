@@ -1,0 +1,35 @@
+{
+  "name": "base-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaroslavkolyagin/base-project.git"
+  },
+  "author": "Yaroslav Kolyagin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaroslavkolyagin/base-project/issues"
+  },
+  "homepage": "https://github.com/yaroslavkolyagin/base-project#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-include-html": "^1.0.14",
+    "gulp-inject-svg": "^0.1.18",
+    "gulp-less": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0"
+  }
+}

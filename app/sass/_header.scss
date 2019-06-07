@@ -1,0 +1,85 @@
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  &__container {
+    padding-top: 12px;
+  }
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  &__socials, &__right {
+    display: flex;
+    justify-content: space-between;
+    width: 142px;
+    margin-top: -40px;
+  }
+  &__social-link {
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  &__login-btn {
+    color: #ffffff;
+    font-family: "Fira Sans";
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    &:hover {
+      background: #fff;
+      color: #191e24;
+    }
+  }
+  &__right {
+
+  }
+  &__lang {
+    width: 32px;
+    height: 32px;
+    font-family: "Fira Sans";
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.56px;
+    line-height: 14px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    cursor: pointer;
+    &:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+.nav {
+  justify-content: center;
+  margin-top: 15px;
+  &__link {
+    margin: 0 10px;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0.56px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+}

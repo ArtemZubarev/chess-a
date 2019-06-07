@@ -1,0 +1,8 @@
+.homeTariffs {
+  margin-top: 90px;
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}

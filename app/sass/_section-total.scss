@@ -1,0 +1,30 @@
+.sectionTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #fff;
+  margin-top: 40px;
+  &__left {
+    font-size: 52px;
+    line-height: 64px;
+  }
+  &__right {
+    .more {
+      color: #191e24;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      line-height: 24px;
+      padding: 13px 14px 12px 20px;
+      background-color: #ffa246;
+      border-radius: 2px;
+      box-shadow: none;
+      border: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      &:hover {
+        background: rgba(255, 162, 70, 0.8);
+      }
+    }
+  }
+}

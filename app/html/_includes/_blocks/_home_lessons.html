@@ -1,0 +1,36 @@
+<div class="homeLessons">
+  <div class="wrapper">
+    <h2 class="title">Уроки</h2>
+    <div class="homeLessons__container">
+      <div class="homeLessons__list">
+        @@include('_includes/_blocks/_lessons/_lesson_1.html')
+        @@include('_includes/_blocks/_lessons/_lesson_2.html')
+        @@include('_includes/_blocks/_lessons/_lesson_3.html')
+        @@include('_includes/_blocks/_lessons/_lesson_4.html')
+        @@include('_includes/_blocks/_lessons/_lesson_5.html')
+        @@include('_includes/_blocks/_lessons/_lesson_6.html')
+      </div>
+      <div class="sectionTotal sectionTotal-cources">
+        <div class="sectionTotal__left">
+          24 урока
+        </div>
+        <div class="sectionTotal__right">
+          <button class="more">ВСЕ УРОКИ →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="videoModal" v-if="modalIsOpen">
+    <div class="videoModal__overlay" v-on:click="closeModal"></div>
+    <div class="videoModal__cancel" v-on:click="closeModal">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="videoModal__content">
+      <video class="videoModal__video" v-bind:src="activeLink" controls="true">
+        <!-- <track kind="subtitles" src="foo.en.vtt" srclang="en" label="English">
+        <track kind="subtitles" src="foo.sv.vtt" srclang="sv" label="Svenska"> -->
+      </video>
+    </div>
+  </div>
+</div>

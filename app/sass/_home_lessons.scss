@@ -1,0 +1,9 @@
+.homeLessons {
+  margin-top: 90px;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+  }
+}

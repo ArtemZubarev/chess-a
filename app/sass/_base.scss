@@ -1,0 +1,58 @@
+* {
+  transition: 0.1s;
+  outline: none;
+  box-sizing: border-box;
+}
+body {
+  max-width: 100%;
+  // overflow: hidden;
+}
+.main-wrapper {
+  max-width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #191e24;
+}
+span, p, div, ul, li {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #fff;
+}
+.wrapper {
+  max-width: 1190px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.link {
+  font-family: "Museo Sans Cyrl";
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  &.visited, &.active {
+    text-decoration: none;
+  }
+}
+.divider-horizontal {
+  width: 47px;
+  height: 6px;
+  background: #000;
+  margin: 25px 0;
+}
+.main-title {
+  color: #ffffff;
+  font-family: "Yeseva One";
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 58px;
+}
+.title {
+  color: #fff;
+  font-family: 'Yeseva One', cursive;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 68px;
+  margin-bottom: 20px;
+}
+
