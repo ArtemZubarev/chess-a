@@ -138,7 +138,8 @@ span, p, div, ul, li {
     border: 2px solid #fff;
     cursor: pointer;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    text-decoration: none; }
     .header__login-btn:hover {
       background: #fff;
       color: #191e24; }
@@ -871,3 +872,223 @@ span, p, div, ul, li {
         transform: rotate(45deg); }
       .videoModal__cancel span:nth-of-type(2) {
         transform: rotate(-45deg); }
+
+.pageImitationWrapper {
+  width: 100%;
+  position: relative; }
+
+.pageLayout {
+  width: 100%; }
+
+.pageLink {
+  display: block;
+  position: absolute;
+  border: 2px solid transparent;
+  background: transparent;
+  top: 0%;
+  left: 0%;
+  width: 10%;
+  height: 1%;
+  z-index: 300;
+  transition: 1s; }
+  .pageLink.active {
+    border: 2px solid #b2b2ff;
+    background: rgba(178, 178, 255, 0.6); }
+
+.coursesLink1 {
+  top: 12.1%;
+  left: 10%;
+  width: 15%;
+  height: 1%; }
+
+.courseLink1 {
+  top: 12.1%;
+  left: 41%;
+  width: 18%;
+  height: 1.4%; }
+
+.webinarsLinkOffline {
+  top: 7.1%;
+  left: 37.5%;
+  width: 7%;
+  height: 1.3%; }
+
+.webinarsLinkOnline {
+  top: 8.9%;
+  left: 31.5%;
+  width: 6%;
+  height: 1.3%; }
+
+.webinarsLinkWebinarOnline {
+  top: 10.9%;
+  left: 50.5%;
+  width: 18%;
+  height: 2%; }
+
+.webinarsLinkWebinarOffline {
+  top: 13.7%;
+  left: 50.5%;
+  width: 18%;
+  height: 2%; }
+
+.lessonsLink {
+  top: 40.5%;
+  left: 9.5%;
+  width: 26.5%;
+  height: 10.9%; }
+
+.falseMenu {
+  top: 4%; }
+  .falseMenu-webinars {
+    left: 31.5%;
+    width: 6%; }
+  .falseMenu-play {
+    left: 38.2%;
+    width: 5%; }
+  .falseMenu-teachers {
+    left: 43.5%;
+    width: 9.3%; }
+  .falseMenu-school {
+    left: 53.4%;
+    width: 10.3%; }
+  .falseMenu-forum {
+    left: 64.4%;
+    width: 4.3%; }
+  .falseMenu-tariffs {
+    left: 69.4%;
+    width: 5.6%; }
+  .falseMenu-home {
+    left: 45%;
+    height: 3.5%; }
+
+.teachersLink {
+  top: 16.8%;
+  left: 19.5%;
+  width: 18.5%;
+  height: 2.4%; }
+
+.teacherLinkTranings {
+  top: 34.8%;
+  left: 35.5%;
+  width: 8%;
+  height: 2.4%; }
+
+.teacherLinkTraning {
+  top: 35.5%;
+  left: 14.2%;
+  width: 5%;
+  height: 2.4%; }
+
+.trainingsLink {
+  top: 15.2%;
+  left: 30.3%;
+  width: 23%;
+  height: 2.4%; }
+
+.playChooseLink {
+  top: 60%;
+  left: 9.3%;
+  width: 9%;
+  height: 4.4%; }
+
+.loginLink {
+  top: 66.2%;
+  left: 45.7%;
+  width: 8.6%;
+  height: 7.4%; }
+
+.registeLoginrLink {
+  top: 83.2%;
+  left: 42.7%;
+  width: 14.6%;
+  height: 6.7%; }
+
+.registerTeacherLink {
+  top: 51.2%;
+  left: 38.7%;
+  width: 22.6%;
+  height: 4.7%; }
+
+.registerLinkRegister {
+  top: 75.6%;
+  left: 39.3%;
+  width: 21.3%;
+  height: 5%; }
+
+.registerLinkLogin {
+  top: 88%;
+  left: 47.3%;
+  width: 5.3%;
+  height: 5%; }
+
+.registerTeacherLoginLink {
+  top: 86%;
+  left: 47.3%;
+  width: 5.3%;
+  height: 5%; }
+
+.registerTeacherLinkTeacherRegister {
+  top: 70.6%;
+  left: 39.3%;
+  width: 21.3%;
+  height: 6%; }
+
+.officeSettingsCoursesLink {
+  top: 28%;
+  left: 28.3%;
+  width: 3.3%;
+  height: 4%; }
+
+.officeSettingsGamesLink {
+  top: 28%;
+  left: 32.9%;
+  width: 4.6%;
+  height: 4%; }
+
+.officeSettingsLessonsLink {
+  top: 28%;
+  left: 38.4%;
+  width: 5.0%;
+  height: 4%; }
+
+.officeCoursesGamesLink {
+  top: 14%;
+  left: 32.9%;
+  width: 4.6%;
+  height: 2%; }
+
+.officeCoursesLessonsLink {
+  top: 14%;
+  left: 38.4%;
+  width: 5.0%;
+  height: 2%; }
+
+.officeLessonsLessonsLink {
+  top: 22.3%;
+  left: 27.3%;
+  width: 5.0%;
+  height: 3%; }
+
+.officeLessonsGamesLink {
+  top: 22.3%;
+  left: 32.9%;
+  width: 4.6%;
+  height: 3%; }
+
+.officeGamesAnalysis1 {
+  top: 47.3%;
+  left: 71.5%;
+  width: 6.1%;
+  height: 3%; }
+
+.analysis1Play {
+  top: 63.4%;
+  left: 61.1%;
+  width: 2.8%;
+  height: 3%; }
+
+.analysis2Play {
+  top: 37.1%;
+  left: 68.7%;
+  width: 6.4%;
+  height: 1.4%; }
