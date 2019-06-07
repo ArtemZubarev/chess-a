@@ -1,0 +1,8 @@
+@@include('_includes/_base/_page-head.html')
+<div class="pageImitationWrapper" v-on:click="showImitationLinks">
+  <a href="./office-courses.html" class="pageLink officeSettingsCoursesLink" v-bind:class="{active: showLinks}"></a>
+  <a href="./office-games.html" class="pageLink officeSettingsGamesLink" v-bind:class="{active: showLinks}"></a>
+  <a href="./office-lessons.html" class="pageLink officeSettingsLessonsLink" v-bind:class="{active: showLinks}"></a>
+  <img class="pageLayout" src="./img/desktop_office@2x.png" alt="">
+</div>
+@@include('_includes/_base/_page-end.html')

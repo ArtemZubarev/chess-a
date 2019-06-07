@@ -1,0 +1,7 @@
+@@include('_includes/_base/_page-head.html')
+<div class="pageImitationWrapper" v-on:click="showImitationLinks">
+  @@include('_includes/_blocks/falseMenu.html')
+  <a href="./lesson.html" class="pageLink lessonsLink" v-bind:class="{active: showLinks}"></a>
+  <img class="pageLayout" src="./img/desktop_lessons@2x.png" alt="">
+</div>
+@@include('_includes/_base/_page-end.html')

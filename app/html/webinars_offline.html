@@ -1,0 +1,7 @@
+@@include('_includes/_base/_page-head.html')
+<div class="pageImitationWrapper" v-on:click="showImitationLinks">
+  <a href="./webinars.html" class="pageLink webinarsLinkOnline" v-bind:class="{active: showLinks}"></a>
+  <a href="./webinar.html" class="pageLink webinarsLinkWebinarOffline" v-bind:class="{active: showLinks}"></a>
+  <img class="pageLayout" src="./img/desktop_webinars_old@2x.png" alt="">
+</div>
+@@include('_includes/_base/_page-end.html')

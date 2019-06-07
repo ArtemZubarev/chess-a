@@ -13,7 +13,8 @@
       el:'#app',
       data: {
         modalIsOpen: false,
-        activeLink: ''
+        activeLink: '',
+        showLinks: false
       },
       methods: {
         openLesson1: function(lesson) {
@@ -23,6 +24,12 @@
         closeModal: function() {
           this.modalIsOpen = false;
           this.activeLink = '';
+        },
+        showImitationLinks: function() {
+          this.showLinks = true;
+          setTimeout(() => {
+            this.showLinks = false;
+          }, 400)
         }
       }
     });
