@@ -39,6 +39,9 @@
         'http://188.226.187.93/video/Дурацкий мат.mp4',
         'http://188.226.187.93/video/Харакири.mp4',
     ];
+    const helloVideos = [
+    'http://188.226.187.93/video/Видеобращение Марии...mp4'
+    ];
     const app = new Vue({
       el:'#app',
       data: {
@@ -54,6 +57,10 @@
         openCourse: function(course) {
           this.modalIsOpen = true;
           this.activeLink = coursesLinks[course];
+        },
+        openHelloVideo1: function(video) {
+          this.modalIsOpen = true;
+          this.activeLink = helloVideos[video];
         },
         closeModal: function() {
           this.modalIsOpen = false;
