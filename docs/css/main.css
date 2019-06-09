@@ -1160,6 +1160,12 @@ span, p, div, ul, li {
   width: 60.4%;
   height: 40.4%; }
 
+.teacherVideoLink {
+  top: 44%;
+  width: 60.2%;
+  left: 9.7%;
+  height: 29%; }
+
 /*!
  * chessboard.js v0.3.0
  *
