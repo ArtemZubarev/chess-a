@@ -1,8 +1,22 @@
 @@include('_includes/_base/_page-head.html')
 <div class="pageImitationWrapper" v-on:click="showImitationLinks">
   @@include('_includes/_blocks/_fake_menu.html')
-  <a href="./course.html" class="pageLink" v-bind:class="{active: showLinks}"></a>
+  <!-- <a href="./course.html" class="pageLink" v-bind:class="{active: showLinks}"></a> -->
+  <div class="pageLink courseLessonVideoLink" v-on:click="openHelloVideo1(0)" v-bind:class="{active: showLinks}"></div>
   <img class="pageLayout" src="./img/desktop_course_lesson@2x.png" alt="">
   @@include('_includes/_blocks/_fake_footer.html')
+  <div class="videoModal" v-if="modalIsOpen">
+    <div class="videoModal__overlay" v-on:click="closeModal"></div>
+    <div class="videoModal__cancel" v-on:click="closeModal">
+      <span></span>
+      <span></span>
+    </div>
+    <div class="videoModal__content">
+      <video class="videoModal__video" v-bind:src="activeLink" controls="true">
+        <!-- <track kind="subtitles" src="foo.en.vtt" srclang="en" label="English">
+        <track kind="subtitles" src="foo.sv.vtt" srclang="sv" label="Svenska"> -->
+      </video>
+    </div>
+  </div>
 </div>
 @@include('_includes/_base/_page-end.html')
