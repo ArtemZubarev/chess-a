@@ -94,7 +94,7 @@
           </div>
         </div>
         <div class="coursePreview__bottom">
-          <span class="coursePreview__name">5 причин, почему я на ChessAction</span>
+          <span class="coursePreview__name" v-on:click="openMainCourse(0)">5 причин, почему я на ChessAction</span>
           <div class="coursePreview__rating">
             <span class="star"></span>
             <span class="star"></span>
@@ -1073,8 +1073,6 @@
     </div>
     <div class="videoModal__content">
       <video class="videoModal__video" v-bind:src="activeLink" controls="true">
-        <!-- <track kind="subtitles" src="foo.en.vtt" srclang="en" label="English">
-        <track kind="subtitles" src="foo.sv.vtt" srclang="sv" label="Svenska"> -->
       </video>
     </div>
   </div>
@@ -1280,6 +1278,9 @@
         'http://188.226.187.93/video/Дурацкий мат.mp4',
         'http://188.226.187.93/video/Харакири.mp4',
     ];
+    const mainCourse = [
+      'http://188.226.187.93/video/17.05.2019 Karyakin int__HQ.mp4'
+    ];
     const app = new Vue({
       el:'#app',
       data: {
@@ -1295,6 +1296,10 @@
         openCourse: function(course) {
           this.modalIsOpen = true;
           this.activeLink = coursesLinks[course];
+        },
+        openMainCourse: function(course) {
+          this.modalIsOpen = true;
+          this.activeLink = mainCourse[course];
         },
         closeModal: function() {
           this.modalIsOpen = false;
