@@ -1,6 +1,14 @@
 .footer {
   margin-top: 60px;
-
+  &.fakeFooter {
+    position: absolute;
+    background: #191e24;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 60px;
+  }
   &__container {
     display: flex;
     justify-content: space-between;

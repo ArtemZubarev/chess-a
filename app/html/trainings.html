@@ -1,6 +1,8 @@
 @@include('_includes/_base/_page-head.html')
 <div class="pageImitationWrapper" v-on:click="showImitationLinks">
+  @@include('_includes/_blocks/_fake_menu.html')
   <a href="./training.html" class="pageLink trainingsLink" v-bind:class="{active: showLinks}"></a>
   <img class="pageLayout" src="./img/desktop_trainings@2x.png" alt="">
+  @@include('_includes/_blocks/_fake_footer.html')
 </div>
 @@include('_includes/_base/_page-end.html')

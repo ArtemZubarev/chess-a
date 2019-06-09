@@ -13,6 +13,7 @@ var injectSvg = require('gulp-inject-svg');
 var injectSvgOptions = { base: '/app' };
 
 const jsFiles = [
+	'app/js/chessboard-0.3.0.js',
 	'app/js/main.js',
 ]
 

@@ -12,6 +12,11 @@ body {
   min-height: 100vh;
   overflow: hidden;
   background: #191e24;
+  background-image: radial-gradient(ellipse farthest-corner  at 21.6% 30.13%, #424e5c 0%, rgba(66, 78, 92, 0) 100%);
+  &.withoutGradient {
+    background-image: none;
+  }
+  
 }
 span, p, div, ul, li {
   font-family: 'Fira Sans', sans-serif;
