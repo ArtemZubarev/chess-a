@@ -12,7 +12,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript" src="http://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"></script> -->
-	<script type="text/javascript" src="./scripts.js"></script>
+	<!-- <script type="text/javascript" src="./chessboard-0.3.0.min.js"></script> -->
+	<!-- <script type="text/javascript" src="./scripts.js"></script> -->
 </head>
 <body>
 	<div id="app" class="main-wrapper">
@@ -24,14 +25,19 @@
     </div>
 </body>
 <script type="application/javascript">
-    const links = [
+    const lessonsLinks = [
         'http://188.226.187.93/video/Миттельшпиль. Часть1.mp4',
         'http://188.226.187.93/video/Основы дебюта.Часть6.mp4',
         'http://188.226.187.93/video/Основы зндшпиля-1.mp4',
         'http://188.226.187.93/video/Основы дебюта. Часть5.mp4',
         'http://188.226.187.93/video/Миттельшпиль. Часть2.mp4',
         'http://188.226.187.93/video/Миттельшпиль.Часть3.mp4'
-    ]
+    ];
+    const coursesLinks = [
+        'http://188.226.187.93/video/Детский мат.mp4',
+        'http://188.226.187.93/video/Дурацкий мат.mp4',
+        'http://188.226.187.93/video/Харакири.mp4',
+    ];
     const app = new Vue({
       el:'#app',
       data: {
@@ -42,7 +48,11 @@
       methods: {
         openLesson1: function(lesson) {
           this.modalIsOpen = true;
-          this.activeLink = links[lesson];
+          this.activeLink = lessonsLinks[lesson];
+        },
+        openCourse: function(course) {
+          this.modalIsOpen = true;
+          this.activeLink = coursesLinks[course];
         },
         closeModal: function() {
           this.modalIsOpen = false;

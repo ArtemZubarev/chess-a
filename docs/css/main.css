@@ -57,7 +57,10 @@ body {
   max-width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background: #191e24; }
+  background: #191e24;
+  background-image: radial-gradient(ellipse farthest-corner at 21.6% 30.13%, #424e5c 0%, rgba(66, 78, 92, 0) 100%); }
+  .main-wrapper.withoutGradient {
+    background-image: none; }
 
 span, p, div, ul, li {
   font-family: 'Fira Sans', sans-serif;
@@ -207,6 +210,14 @@ span, p, div, ul, li {
 
 .footer {
   margin-top: 60px; }
+  .footer.fakeFooter {
+    position: absolute;
+    background: #191e24;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 60px; }
   .footer__container {
     display: flex;
     justify-content: space-between;
@@ -875,7 +886,10 @@ span, p, div, ul, li {
 
 .pageImitationWrapper {
   width: 100%;
-  position: relative; }
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-shadow: 0px 10px 17px 0px rgba(0, 0, 0, 0.45); }
 
 .pageLayout {
   width: 100%; }
@@ -894,6 +908,53 @@ span, p, div, ul, li {
   .pageLink.active {
     border: 2px solid #b2b2ff;
     background: rgba(178, 178, 255, 0.6); }
+
+.fakeMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 265px; }
+  .fakeMenu__link:nth-of-type(1) {
+    top: 2%;
+    left: 45.5%;
+    width: 9.1%;
+    height: 34%; }
+  .fakeMenu__link:nth-of-type(2) {
+    top: 6.3%;
+    left: 80.2%;
+    width: 7.1%;
+    height: 13%; }
+  .fakeMenu__link:nth-of-type(3) {
+    top: 40%;
+    left: 25.5%;
+    width: 5.3%;
+    height: 11%; }
+  .fakeMenu__link:nth-of-type(4) {
+    top: 40%;
+    left: 31.5%;
+    width: 6.2%;
+    height: 11%; }
+  .fakeMenu__link:nth-of-type(5) {
+    top: 40%;
+    left: 38.5%;
+    width: 4.3%;
+    height: 11%; }
+  .fakeMenu__link:nth-of-type(6) {
+    top: 40%;
+    left: 43.5%;
+    width: 9.3%;
+    height: 11%; }
+  .fakeMenu__link:nth-of-type(7) {
+    top: 40%;
+    left: 53.5%;
+    width: 10.3%;
+    height: 11%; }
+  .fakeMenu__link:nth-of-type(8) {
+    top: 40%;
+    left: 69.7%;
+    width: 5%;
+    height: 11%; }
 
 .coursesLink1 {
   top: 12.1%;
@@ -1092,3 +1153,69 @@ span, p, div, ul, li {
   left: 68.7%;
   width: 6.4%;
   height: 1.4%; }
+
+/*!
+ * chessboard.js v0.3.0
+ *
+ * Copyright 2013 Chris Oakman
+ * Released under the MIT license
+ * https://github.com/oakmac/chessboardjs/blob/master/LICENSE
+ *
+ * Date: 10 Aug 2013
+ */
+/* clearfix */
+.clearfix-7da63 {
+  clear: both; }
+
+/* board */
+.board-b72b1 {
+  border: 2px solid #404040;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
+
+/* square */
+.square-55d63 {
+  float: left;
+  position: relative;
+  /* disable any native browser highlighting */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* white square */
+.white-1e1d7 {
+  background-color: #eeeed2;
+  color: #b58863; }
+
+/* black square */
+.black-3c85d {
+  background-color: #769656;
+  color: #f0d9b5; }
+
+/* highlighted square */
+.highlight1-32417, .highlight2-9c5d2 {
+  -webkit-box-shadow: inset 0 0 3px 3px yellow;
+  -moz-box-shadow: inset 0 0 3px 3px yellow;
+  box-shadow: inset 0 0 3px 3px yellow; }
+
+/* notation */
+.notation-322f9 {
+  cursor: default;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  position: absolute; }
+
+.alpha-d2270 {
+  bottom: -27px;
+  right: 20px;
+  color: #191e24;
+  font-family: "Fira Sans"; }
+
+.numeric-fc462 {
+  top: 10px;
+  left: -14px;
+  color: #191e24;
+  font-family: "Fira Sans"; }

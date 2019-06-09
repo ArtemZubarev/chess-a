@@ -10,12 +10,14 @@
 	<link rel="stylesheet" href="./css/main.css">
 
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script type="text/javascript" src="http://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"></script> -->
-	<script type="text/javascript" src="./scripts.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+	<!-- <script type="text/javascript" src="http://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"></script> -->
+	<!-- <script type="text/javascript" src="./chessboard-0.3.0.min.js"></script> -->
+	
 </head>
 <body>
-	<div id="app" class="main-wrapper">
+	<div id="app" class="main-wrapper withoutGradient">
 
 <header class="header">
   <div class="wrapper">
@@ -53,7 +55,7 @@
         <a href="./play-choose.html" class="nav__link">Играть</a>
         <a href="./teachers.html" class="nav__link">Преподаватели</a>
         <a href="./school.html" class="nav__link">Шахматы в школе</a>
-        <a href="./forum.html" class="nav__link">Форум</a>
+        <a href="./#" class="nav__link">Форум</a>
         <a href="./tariffs.html" class="nav__link">Тарифы</a>
       </div>
     </div>
@@ -149,7 +151,7 @@
       </div>
     </div>
     <div class="coursePreview__bottom">
-      <span class="coursePreview__name">Детский мат</span>
+      <span class="coursePreview__name" v-on:click="openCourse(0)">Детский мат</span>
       <div class="coursePreview__rating rankB">
         <span class="star"></span>
         <span class="star"></span>
@@ -198,7 +200,7 @@
       </div>
     </div>
     <div class="coursePreview__bottom">
-      <span class="coursePreview__name">Дурацкий мат</span>
+      <span class="coursePreview__name" v-on:click="openCourse(1)">Дурацкий мат</span>
       <div class="coursePreview__rating rankA">
         <span class="star"></span>
         <span class="star"></span>
@@ -296,7 +298,7 @@
       </div>
     </div>
     <div class="coursePreview__bottom">
-      <span class="coursePreview__name">Харакири</span>
+      <span class="coursePreview__name" v-on:click="openCourse(2)">Харакири</span>
       <div class="coursePreview__rating rankB">
         <span class="star"></span>
         <span class="star"></span>
@@ -536,7 +538,8 @@
   <div class="wrapper">
     <div class="checkYourself__container">
       <div class="checkYourself__board">
-        <img src="./img/chess.png" alt>
+        <!-- <img src="./img/chess.png" alt=""> -->
+        <div id="board1" style="width: 400px"></div>
       </div>
       <div class="checkYourself__controlPanel">
         <div class="checkYourself__box">
@@ -1057,7 +1060,7 @@
           24 урока
         </div>
         <div class="sectionTotal__right">
-          <button class="more">ВСЕ УРОКИ →</button>
+          <a href="./lessons.html" class="more">ВСЕ УРОКИ →</a>
         </div>
       </div>
     </div>
@@ -1175,6 +1178,31 @@
     <div class="footer__container">
       <div class="footer__left">
         <div class="footer__navItem">
+          <a href="./courses.html">Учиться</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="./teachers.html">Преподаватели</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="./tariffs.html">ТАРИФЫ</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="./webinars.html">ВЕБИНАРЫ</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="./school.html">Шахматы в школе</a>
+        </div>
+        <div class="footer__navItem">
+        </div>
+        <div class="footer__navItem">
+          <a href="./play-choose.html">ИГРАТЬ</a>
+        </div>
+        <div class="footer__navItem">
+          <a href="#">Форум</a>
+        </div>
+      </div>
+      <!-- <div class="footer__left">
+        <div class="footer__navItem">
           <a href="#">КУРСЫ</a>
         </div>
         <div class="footer__navItem">
@@ -1201,7 +1229,7 @@
         <div class="footer__navItem">
           <a href="#">СОЗДАТЕЛИ</a>
         </div>
-      </div>
+      </div> -->
       <div class="footer__right">
         <div class="footer__docs">
           <div class="footer__docsItem">
@@ -1239,14 +1267,19 @@
     </div>
 </body>
 <script type="application/javascript">
-    const links = [
+    const lessonsLinks = [
         'http://188.226.187.93/video/Миттельшпиль. Часть1.mp4',
         'http://188.226.187.93/video/Основы дебюта.Часть6.mp4',
         'http://188.226.187.93/video/Основы зндшпиля-1.mp4',
         'http://188.226.187.93/video/Основы дебюта. Часть5.mp4',
         'http://188.226.187.93/video/Миттельшпиль. Часть2.mp4',
         'http://188.226.187.93/video/Миттельшпиль.Часть3.mp4'
-    ]
+    ];
+    const coursesLinks = [
+        'http://188.226.187.93/video/Детский мат.mp4',
+        'http://188.226.187.93/video/Дурацкий мат.mp4',
+        'http://188.226.187.93/video/Харакири.mp4',
+    ];
     const app = new Vue({
       el:'#app',
       data: {
@@ -1257,7 +1290,11 @@
       methods: {
         openLesson1: function(lesson) {
           this.modalIsOpen = true;
-          this.activeLink = links[lesson];
+          this.activeLink = lessonsLinks[lesson];
+        },
+        openCourse: function(course) {
+          this.modalIsOpen = true;
+          this.activeLink = coursesLinks[course];
         },
         closeModal: function() {
           this.modalIsOpen = false;
@@ -1272,4 +1309,5 @@
       }
     });
     </script>
+    <script type="text/javascript" src="./scripts.js"></script>
 </html>
