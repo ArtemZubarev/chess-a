@@ -36,13 +36,13 @@
 
 /* white square */
 .white-1e1d7 {
-  background-color: #f0d9b5;
+  background-color: #eeeed2;
   color: #b58863;
 }
 
 /* black square */
 .black-3c85d {
-  background-color: #b58863;
+  background-color: #769656;
   color: #f0d9b5;
 }
 
@@ -61,10 +61,14 @@
   position: absolute;
 }
 .alpha-d2270 {
-  bottom: 1px;
-  right: 3px;
+  bottom: -27px;
+  right: 20px;
+  color: #191e24;
+  font-family: "Fira Sans";
 }
 .numeric-fc462 {
-  top: 2px;
-  left: 2px;
+  top: 10px;
+  left: -14px;
+  color: #191e24;
+  font-family: "Fira Sans";
 }
